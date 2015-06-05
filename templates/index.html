@@ -1,0 +1,11 @@
+{{ load django_markdown }}
+
+{{ block blog_entries }}
+{{ for blog in object_list }}
+<div class="post">
+<h2>{{ blog.title }}</h2>
+<p class="meta">{{ blog.created }}</p>
+{{ blog.body|markdown }}
+<div></div>
+{{ endfor }}
+{{ end block }}
